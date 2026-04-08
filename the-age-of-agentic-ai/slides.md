@@ -8,20 +8,20 @@ The software paradigm shifted. Yours should too.
 <!-- .slide: class="center" -->
 
 ## Part I
-
 # The Big Picture
 
----
-
-## We Live in an Information Age
-
-###### Every company is a software company
-
-Your competitive advantage is determined by how effectively you can leverage software.
+Note: I will start really wide and then zoom in step by step. In this way, your reasoning will be grounded in the big picture and you can make your decisions with more confidence.
 
 ---
 
-## The Evolution of Software Distribution
+### We Live in an Information Age
+
+Every company is a software company
+
+Note: Your competitive advantage is determined by how effectively you can leverage software.
+
+---
+### The Evolution of Software Distribution
 
 | Era | Medium | Model |
 |-----|--------|-------|
@@ -29,76 +29,68 @@ Your competitive advantage is determined by how effectively you can leverage sof
 | 2000s - 2025 | 🌐 Web & SaaS | Cloud subscriptions |
 | 2025+ | 🤖 Agents | On-demand generation |
 
-Note: You're awesome!
+
+Note: Developing and distibuting software was difficult and expensive.
+
+First, we had to write it, compile it and then physically distribute it.
+
+Then came the SaaS revolution, when we could distribute the software via the browser. You might not remember, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up, pay a very low monthly fee and start using the software on every computer that had a browser was revolutionary.
+
+Today, we are entering a new software paradigm, a paradigm of Agentic AI. It is still very early, but this might be the biggest revolutions of all.
 
 ---
 
-## The Old Model
 
-**Physical Era**
-- Company builds software
-- Packages it on media
-- Ships to customers
-
-**SaaS Era**
-- Company builds software
-- Hosts in the cloud
-- Customers access via browser
-
-**Common thread:** You depend on someone else to build it.
-
----
-
-## The Paradigm Shift
-
-> "We see a future where intelligence is a utility like electricity or water and people buy it on a meter."
-
-*— Sam Altman, 2026 Infrastructure Summit*
-
-The barrier to software creation has collapsed.
-
----
-
-## It's Always Been About Cost
-
-**Before:**
-- $15K–$150K+ for custom software
-- 4–6 month development cycles
-- Specialized talent required
-- Research → Evaluate → Pay → Wait
-
-**Now:**
-- LLM API costs dropped 80% YoY
-- Inference costs falling 10x annually
-- 30–50% developer productivity gains
-- Describe → Generate → Use
-
----
-
-## The New Reality
+### The Cost of Software is Collapsing
 
 Instead of:
 
-```
-Research tools → Compare pricing → Sign contract → Wait → Learn UI
-```
-
+`
+Research tools → Compare pricing →
+Sign contract → Learn UI
+`
+<!-- .element: style="font-size: 0.5em" -->
 You can:
 
 ```bash
 $ claude "build me a tool that does X"
-
-→ Working software in minutes
+# → Working software in minutes
 ```
 
----
 
+Note: You used to:
+- identify a problem in the company
+- research tools
+- judge whether they are compatible with what you are already using 
+- decide on the tier and the number of seats
+- onboard everyone in the company to use them.
+
+__AND STILL HOWEVER MUCH you tried, the software never did everything you needed, and you always thought "If only it could do X"__
+
+With the advent of capable coding agents like claude code or codex you can sit down and write the exact software you need in minutes.
+
+---
+<!-- .slide: class="center" -->
+
+### KEY TAKEWAY
+
+change your thinking from:
+
+#### "What tool should I subscribe to next to solve my problem?"
+
+to:
+
+#### "How do I specify this well enough so that my coding agent can build it in one shot?"
+
+---
 <!-- .slide: class="center" -->
 
 ## Part II
 
-# Mindset Shifts
+# What is an AGENT?
 
+---
+### 
 ---
 
 ## Pull, Don't Push
