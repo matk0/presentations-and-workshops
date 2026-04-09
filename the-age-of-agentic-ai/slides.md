@@ -30,11 +30,11 @@ Note: Your competitive advantage is determined by how effectively you can levera
 | 2025+ | 🤖 Agents | On-demand generation |
 
 
-Note: Developing and distibuting software was difficult and expensive.
+Note: Developing and distributing software was difficult and expensive.
 
 First, we had to write it, compile it and then physically distribute it.
 
-Then came the SaaS revolution, when we could distribute the software via the browser. You might not remember, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up, pay a very low monthly fee and start using the software on every computer that had a browser was revolutionary.
+Then came the SaaS revolution, when we could distribute the software via the browser. You might not remember, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up, in comparison pay a very low monthly fee and start using the software on every computer that had a browser was revolutionary.
 
 Today, we are entering a new software paradigm, a paradigm of Agentic AI. It is still very early, but this might be the biggest revolutions of all.
 
@@ -83,6 +83,10 @@ to:
 #### "How do I specify this well enough so that my coding agent can build it in one shot?"
 
 
+Note: Because the cost of software creation is collapsing, it no longer makes sense to subscribe to services that does not fit you very well and you can build them to fit your needs exactly.
+
+**HOWEVER** our thinking has not adjusted yet. We are looking at new AI powered products and comparing how much each costs on a monthly basis and whether the service has all the bells and whistles we are looking for. This is an old paradigm thinking applied to new paradigm. In the new paradigm, intelligence is on tap via API and you use this intelligence in a sovereign manner to suit your needs exactly.
+
 ---
 <!-- .slide: class="center" -->
 
@@ -128,17 +132,138 @@ for step in plan_steps:
     conversation.append({"role": "assistant", "content": response.content[0].text})
 ```
 <!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
+
 ---
 
-- Tools: lets it browse the web, call APIs, edit files, send messages and execute code
-- Memory: keeps context across time
-- Agency: means it can decide and act in a loop
+TOOLS -> lets it browse the web, call APIs, edit files, send messages and execute code
 
-An LLM chatbot answers. An agent gets work done.
+---
+<!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
+```python
+# What YOU write (clean API call):
+response = client.messages.create(
+    model="claude-opus-4-6",
+    tools=tools,
+    messages=[{"role": "user", "content": "Is mining profitable right now?"}]
+)
+
+# What the model ACTUALLY sees (roughly — Anthropic injects this into the context):
+"""
+You have access to the following tools:
+
+<tools>
+  <tool>
+    <name>get_btc_price</name>
+    <description>Fetch the current Bitcoin price in USD</description>
+    <input_schema>{"type": "object", "properties": {}}</input_schema>
+  </tool>
+  <tool>
+    <name>get_hashrate</name>
+    <description>Fetch current hashrate from the mining dashboard</description>
+    <input_schema>{"type": "object", "properties": {"rig_id": {"type": "string"}}}</input_schema>
+  </tool>
+</tools>
+
+If a tool is appropriate, respond with a tool_use block.
+If no tool is needed, respond directly.
+
+User: Is mining profitable right now?
+"""
+
+# Model responds with:
+# {"type": "tool_use", "name": "get_btc_price", "input": {}}
+# — your code executes it, result goes back into context, loop continues
+```
+
+<!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
+---
+
+MEMORY -> keeps context across time
+
+---
+```python
+import anthropic
+import numpy as np
+
+client = anthropic.Anthropic()
+
+# --- WRITE: storing a memory ---
+fact = "Rig #12 was replaced on 2025-11-03 due to a failed PSU."
+
+embed_response = client.messages.create(  # in practice: use a dedicated embeddings API
+    model="claude-opus-4-6",              # e.g. OpenAI embeddings or a local model
+    ...
+)
+vector = get_embedding(fact)   # → [0.021, -0.843, 0.374, ...]  (1536 floats)
+vector_db.store(vector, metadata={"text": fact, "date": "2025-11-03", "rig": 12})
+
+# --- READ: at the start of every agent run ---
+query = "Is rig #12 behaving normally?"
+query_vector = get_embedding(query)
+
+# fetch the top 3 most semantically similar memories
+results = vector_db.search(query_vector, top_k=3)
+# → ["Rig #12 was replaced on 2025-11-03 due to a failed PSU.",
+#    "Rig #12 average hashrate: 98 TH/s",
+#    "Rig #12 flagged for elevated temp on 2025-10-28"]
+
+# inject only the relevant memories into the system prompt
+system_prompt = f"""You are an operations agent.
+
+Relevant context from memory:
+{chr(10).join(results)}
+
+Use this context when answering. Do not hallucinate hardware history."""
+```
+
+---
+
+AGENCY -> means it can decide and act in a loop
+
+---
+
+```python
+messages = [{"role": "user", "content": user_input}]
+
+while True:
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        system=system_prompt,
+        tools=tools,
+        messages=messages
+    )
+
+    if response.stop_reason == "end_turn":
+        print(response.content[0].text)
+        break                                    # agent is done
+
+    if response.stop_reason == "tool_use":
+        tool_call = response.content[0]
+        result = execute_tool(tool_call.name, tool_call.input)  # your code runs here
+
+        messages.append({"role": "assistant", "content": response.content})
+        messages.append({"role": "user", "content": [{
+            "type": "tool_result",
+            "tool_use_id": tool_call.id,
+            "content": str(result)
+        }]})
+        # ↑ loop continues — model sees the result and decides next step
+```
+
+---
+
+
+### Agentic AI FOMO
 
 Note: One of the reasons we are having this workshop right now is that there is so much hype and almost a sense of FOMO around agents.
 
-There is also the counternarrative of agents being
+There is also the counternarrative of AI being useless, slop machines and stories of agentic worklflows gone terribly wrong.
+
+
+## Part III
+# The Use Cases
+
+Note: The truth is somewhere in the middle. Let's go through some of the ways agents are being used right now.
 
 ---
 
