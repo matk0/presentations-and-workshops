@@ -82,6 +82,7 @@ to:
 
 #### "How do I specify this well enough so that my coding agent can build it in one shot?"
 
+
 ---
 <!-- .slide: class="center" -->
 
@@ -90,35 +91,87 @@ to:
 # What is an AGENT?
 
 ---
-### 
+
+### Brain + Tools + Memory + Agency =
+## Agent 
+
+---
+
+BRAIN -> reasons about the next best step
+
+---
+<!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
+```python
+# Step 1: ask for a plan
+planning_response = client.messages.create(
+    model="claude-opus-4-6",
+    system="You are an operations agent. When given a task, first output a numbered plan. Be specific.",
+    messages=[{"role": "user", "content": "Assess whether our mining is profitable right now."}]
+)
+
+# model returns:
+# "1. Fetch current BTC price
+#  2. Fetch current network difficulty
+#  3. Fetch our hashrate and power cost
+#  4. Calculate revenue vs cost
+#  5. Return a verdict"
+
+plan_steps = parse_plan(planning_response)  # split on numbered lines
+
+# Step 2: execute each step, feeding results back as context
+for step in plan_steps:
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        system="Execute this single step. Use tools if needed. Be concise.",
+        messages=conversation + [{"role": "user", "content": f"Current step: {step}"}]
+    )
+    conversation.append({"role": "assistant", "content": response.content[0].text})
+```
+<!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
+---
+
+- Tools: lets it browse the web, call APIs, edit files, send messages and execute code
+- Memory: keeps context across time
+- Agency: means it can decide and act in a loop
+
+An LLM chatbot answers. An agent gets work done.
+
+Note: One of the reasons we are having this workshop right now is that there is so much hype and almost a sense of FOMO around agents.
+
+There is also the counternarrative of agents being
+
 ---
 
 ## Pull, Don't Push
 
-**Old Way** — You go out to find information:
-- Check dashboards
-- Read email newsletters
-- Browse news sites
-- Query databases
+Old software makes humans poll systems for updates.
 
-**New Way** — Agents pull information to you:
-- Summarized and prioritized
-- Delivered when relevant
-- In formats you prefer
-- With context attached
+Agentic software flips the flow:
+- Watches inboxes, dashboards, feeds, and databases
+- Pulls out what changed
+- Summarizes what matters
+- Routes it to the right person
+- Takes the next step when allowed
+
+**The interface matters less. The outcome matters more.**
+
+Note: Software used to be something you had to go check. With agents, the software starts working in the background and brings you the delta, not the raw stream.
 
 ---
 
 ## Everything Becomes Data
 
-Transform all company functions into formats agents can consume:
+To work well, agents need machine-readable context:
 
-- **Meetings** → Transcripts + action items in `.md`
-- **Decisions** → Documented rationale with context
-- **Processes** → Structured workflows agents can execute
-- **Knowledge** → Indexed, searchable, agent-accessible
+- **Meetings** → Transcripts, owners, deadlines
+- **Decisions** → Rationale, tradeoffs, approvals
+- **Processes** → States, triggers, handoffs
+- **Knowledge** → Indexed docs and searchable repositories
+- **Systems** → APIs, exports, and event streams
 
-**If it's not machine-readable, it doesn't exist to your agents.**
+**If agents cannot read it and write back to it, the workflow stays manual.**
+
+Note: This is why data readiness matters so much. If important context only lives in people's heads, scattered screenshots, or closed interfaces, your agents stay blind.
 
 ---
 
@@ -126,12 +179,19 @@ Transform all company functions into formats agents can consume:
 
 # ⚡ = 🧠
 
-Just as you don't think about how electricity reaches your outlet:
+Reasoning starts to look like infrastructure:
 
-- Intelligence becomes infrastructure
-- Available instantly, billed by usage
-- Abstracted complexity
-- Commodity pricing
+- On-demand
+- Metered
+- Embedded into every workflow
+- Swappable by price, speed, or privacy
+- Expected everywhere, noticed nowhere
+
+You will not buy software for every edge case.
+
+You will route intelligence into the process.
+
+Note: This is the bridge into the next section. Once intelligence becomes infrastructure, the obvious questions become who controls it, where it runs, and what happens to your data.
 
 ---
 
