@@ -6,6 +6,8 @@ The software paradigm shifted. Yours should too.
 
 Note: Hello, my name is Matej Lukášik and I'm a friend of Amity Age and today I would like to tell you a bit about Agentic AI, for about thirty minutes and then we can have another thirty minutes for discussion.
 
+The presentation is going to be more theoretical and during a longer Q&A session we can get into the practical details.
+
 ---
 <!-- .slide: class="center more-paragraph-space" -->
 
@@ -34,9 +36,9 @@ Note: No matter the industry you're in, a lot of the value you deliver and captu
 
 Note: At the beginning of the era of personal computers, developing and distributing software was difficult and expensive.
 
-First, we had to write it in clumsy languages and then physically distribute it on floppy disks, CDs or later DVDs.
+First, we had to write it in clumsy programming languages and then physically distribute it on floppy disks, CDs or later DVDs.
 
-Then came the SaaS revolution, when we could distribute the software via the browser. Some of you might be young enough to not be able to remember this, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up online, pay comparatively very low monthly and could start using the software immediately was revolutionary.
+Then came the SaaS revolution, when we could distribute software via the browser. Some of you might not be old enough to remember this, but the fact that companies did not have to buy physical copies of a set version of software but instead could sign up online, pay comparatively very low monthly fees and receive free updates of the software all the time was revolutionary.
 
 Today, we are entering a new software paradigm, a paradigm of Agentic AI. In this era, only the most powerful and complicated applications are built by big companies and subscribed to using the SaaS model. The rest is built by on-demand. On a long enough time horizon, maybe even the browser will dissapear and all you do is talk to your agent.
 
@@ -108,7 +110,7 @@ There is also the counternarrative of AI being a useless producing slop machine 
 
 ![Pull back the curtain](pull-the-curtain.jpg)
 <!-- .element: style="max-height: 76vh; width: auto; border-radius: 12px; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28)" -->
-Note: The truth is somewhere in the middle. Let me walk you through what an agent is and pull the curtain for you, so that your understanding can touch solid ground and move forward with confidence.
+Note: The truth is somewhere in the middle. Let me pull the curtain for you, walk you through what an agent exactly is.
 
 ---
 
@@ -199,6 +201,9 @@ User: Is mining profitable right now?
 
 MEMORY -> keeps context across time
 
+Note: Normally an LLM only remembers what is in it's current context and we have to reset it when we reach the context window. We can create note files and then later load them into the context. However, the real nice way to do this, is to periodically save summarizations of our conversations in a vector database and then search this database while working prompts thus seemingly remembering all we ever talked about.
+
+
 ---
 <!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
 ```python
@@ -236,8 +241,6 @@ Relevant context from memory:
 Use this context when answering. Do not hallucinate hardware history."""
 ```
 <!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
-Note: Normally an LLM only remembers what is in it's current context and we have to reset it when we reach the context window. We can create note files and then later load them into the context. However, the real nice way to do this, is to periodically save summarizations of our conversations in a vector database and then search this database while working prompts thus seemingly remembering all we ever talked about.
-
 ---
 
 AGENCY -> means it can decide and act in a loop
@@ -286,9 +289,9 @@ From a perspective of a Bitcoin company like Amity Age, this paradigm also allow
 
 However, this is the exact same dilemma as with Bitcoin custody, the more sovereign you want the setup to be, the more work and inconvenience for you. On the other hand there are whole AI suites like the Claude Cowork that provide high levels of convenience but lock you into a vendor and can become more expensive.
 
-Make no mistake about it, agents can get expensive and as you discover their power, you will want to use them more and more. Even though they will be 10x cheaper than if you would ask human to do the same work, the costs will add up.
+Make no mistake about it, agents can get expensive and as you discover their power, you will want to use them more and more. Even though they will be 10x cheaper than if you would ask human to do the same work, the costs will add up. Thus thinking about the costs before implementic agentic companies in your company is a valid concern.
 
-This is one of the choices you will have to make going forward. What levels of sovereignity and self-sustainability do we want and what are we willing to pay for it?
+Overall, this is a decision you will need to make: What levels of sovereignity and self-sustainability vs convenience do we want and what are we willing to pay for it?
 
 ---
 
@@ -304,6 +307,7 @@ Note:
 - Give your agent access to your inbox, it can classify emails, extract fields, forward if necessary and draft responses so that you can later just check them and send them
 - If there is anything unusual or he is not sure, he can escalate to you via another channel
 - Slowly over time you can teach the agent to treat your inbox just like you would
+- **Amity Age example**: You get inbound emails from potential mining clients asking about hosting prices, availability in Paraguay vs Ethiopia, setup timelines. An agent could classify these by intent (new client inquiry, existing client support, partnership proposal), extract key details (desired hashrate, location preference, budget), draft a personalized response using your standard pricing, and flag high-value leads for personal follow-up.
 
 **Failure modes**: Wrong classification, wrong tone, too much access, accidental external reply.
 
@@ -314,6 +318,7 @@ Note:
 Note: 
 - You give agent access to your calendar and then ask it to schedule meetings using your voice via Telegram or any other channel. This is how we all imagined Siri would work.
 - It checks for conflicts, sends invites, follows up if unanswered etc.
+- **Amity Age example**: You operate across Paraguay, Ethiopia, Honduras and Slovakia — that's four different time zones and cultures. An agent that handles scheduling across these regions, respects local holidays and working hours, and follows up with site managers in their preferred language could save hours of coordination every week.
 
 **Failure modes**: Auth friction, time-zone errors, missing buffers, double-booking.
 
@@ -335,6 +340,7 @@ Note:
 Note:
 - For things that have clear definitions and metrics, like for example bitcoin price, it is easy to set an alert.
 - But for things that are harder to define and judgment is needed, like monitoring news, monitoring competition etc. monitoring and alerting is more difficult.
+- **Amity Age example**: Beyond price alerts, imagine an agent that monitors network difficulty trends, your rig hashrates across Paraguay and Ethiopia, electricity cost fluctuations, and hardware vendor pricing — then synthesizes all of this into a daily brief: "Difficulty rose 4% this epoch, Ethiopia site is running 97% uptime, Paraguay Rig #12 dropped 15% hashrate — likely needs attention. Current all-in cost per BTC: $X." That is judgment-level monitoring no simple dashboard gives you.
 
 **Failure modes**: Brittle scraping, noisy alerts, and Terms-of-Service constraints.
 
@@ -366,6 +372,7 @@ Note: This way of monitoring data feeds is another subtle paradigm shift. The br
 Note:
 - You connect your company documents, standard operating procedures, contracts and internal knowledge and let the agent answer repetitive customer questions
 - It can either answer directly or draft a response for a human to approve, depending on the risk level
+- **Amity Age example**: Your Bitcoin Education Academy has accumulated a lot of teaching material — how Bitcoin works, how to avoid scams, how to handle objections. An agent trained on this knowledge base could answer student questions 24/7, help new educators prepare for sessions, or even power a Telegram bot for the Roatan education center that answers visitors' questions in English and Spanish.
 
 **Failure modes**: Prompt injection, stale docs, brand-tone mistakes, compliance and logging gaps.
 
@@ -378,6 +385,7 @@ Note:
 - The agent finds leads, enriches company data, drafts personalized outreach and keeps the pipeline organized for you
 - This is easy to measure and A/B test
 - You can think of it as outsourcing the top of your sales funnel to software
+- **Amity Age example**: An agent could monitor Bitcoin mining forums, Twitter/X, and Telegram groups for people expressing interest in hosting or mining, enrich them with company data, and draft personalized outreach: "I noticed you're looking for hydro-powered hosting — we have availability at our Paraguay facility at competitive rates." That is targeted, relevant, and much more effective than cold outreach.
 
 **Failure modes**: Legal and ToS risk, low-quality data, spammy outreach, poor deliverability.
 
@@ -387,6 +395,7 @@ Note:
 
 Note:
 - You feed the agent receipts, invoices, contracts or scanned PDFs and it extracts the relevant fields into structured data
+- **Amity Age example**: Mining hosting contracts, hardware invoices from different vendors, shipping documents from multiple countries — all of this comes in different formats and languages. An agent could extract key terms (hashrate commitments, pricing, warranty periods, delivery dates) into a structured spreadsheet, flag contracts nearing expiry, and compare vendor pricing automatically.
 
 **Failure modes**: OCR edge cases, vendor template variance, and sensitive financial data handling.
 
@@ -397,6 +406,7 @@ Note:
 Note:
 - You feed the agent your podcasts, videos, blog posts etc. and let the agent turn it into posts, clips, emails and give it all publishing schedule
 - This is great for short form content marketing, education, etc.
+- **Amity Age example**: You have educational content from the Academy, blog posts, and likely talks or podcast appearances. An agent could take a single Academy session recording, transcribe it, generate a blog post, five Twitter/X threads, an email newsletter, and a set of Instagram captions — all in your brand voice, all scheduled to publish over the next two weeks. For a mission-driven company trying to reach 100 million people with Bitcoin education, this kind of content multiplication is a force multiplier.
 
 **Failure modes**: Generic voice, factual drift, uneven quality, over-automation.
 
@@ -457,6 +467,32 @@ Andrej Karpathy's experiment: **let AI conduct ML research overnight**
 **This is the future: AI agents that improve themselves.**
 
 [github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
+
+---
+
+## Human-in-the-Loop, Always
+
+Never let agents act alone on high-stakes decisions
+
+`Agent drafts → Human reviews → Human approves → Agent executes`
+
+Note: This is the most important safety tip. Agents are powerful but they hallucinate, misunderstand context, and lack judgment. The pattern that works is: let the agent do the heavy lifting (research, drafting, data processing), but keep a human in the loop for anything that touches customers, money, or reputation. Start with agents that draft and you approve. Over time, as you build trust, you can expand their autonomy — but never fully remove the human check on things that matter. Think of it like hiring a very fast junior employee: you wouldn't let them send contracts to clients without review.
+
+---
+
+## Invest in Prompts, Not Just Tools
+
+Your agent is only as good as its instructions
+
+Note: The quality of the output is directly proportional to the quality of the prompt. Treat your best prompts like company assets. Version control them. Share them across the team. When you find a prompt that produces consistently good results — for drafting client emails, for generating reports, for analyzing data — save it and reuse it. This is the new form of institutional knowledge. A well-crafted prompt is worth more than a SaaS subscription because it encodes exactly how your company thinks and operates.
+
+---
+
+## Measure Before You Scale
+
+Automate one workflow end-to-end before expanding
+
+Note: It is tempting to try to automate everything at once. Resist this. Pick one workflow — the most painful, repetitive one — and automate it properly. Measure the time saved, the error rate, the cost. Only then move to the next one. This gives you real data to make decisions with, builds confidence in the team, and prevents the chaos of half-built automations everywhere. A company with one fully automated workflow is in a much better position than one with ten half-working ones.
 
 ---
 <!-- .slide: class="center" -->
