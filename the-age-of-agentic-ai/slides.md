@@ -236,7 +236,6 @@ Relevant context from memory:
 Use this context when answering. Do not hallucinate hardware history."""
 ```
 <!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
-
 Note: Normally an LLM only remembers what is in it's current context and we have to reset it when we reach the context window. We can create note files and then later load them into the context. However, the real nice way to do this, is to periodically save summarizations of our conversations in a vector database and then search this database while working prompts thus seemingly remembering all we ever talked about.
 
 ---
@@ -422,75 +421,27 @@ Note:
 **Failure modes**: Trust, quality variance, consent/compliance issues, very visible failures.
 
 ---
-
-## Everything Becomes Data
-
-To work well, agents need machine-readable context:
-
-- **Meetings** → Transcripts, owners, deadlines
-- **Decisions** → Rationale, tradeoffs, approvals
-- **Processes** → States, triggers, handoffs
-- **Knowledge** → Indexed docs and searchable repositories
-- **Systems** → APIs, exports, and event streams
-
-**If agents cannot read it and write back to it, the workflow stays manual.**
-
-Note: This is why data readiness matters so much. If important context only lives in people's heads, scattered screenshots, or closed interfaces, your agents stay blind.
-
----
 <!-- .slide: class="center" -->
+## Part IV
+
+# Tips
 
 ---
 
+## Start turning everything into data
 
+To fully leverage agents, turn as much as you can into text. 
 
-<!-- .slide: class="center" -->
+This way your agents can see it, reason about it, find connections and insight you might miss.
 
-## Part V
+Note: In your case, I would start leveraging Google Docs. Imagine this: Everyday, most of the work you have done, is saved and made available in a Google Drive folder your agent can access. Every night, each of your agents scan through the work you have done and look for connections. If they see connections in between your work, they will let you know or even automatically report.
 
-# Agentic AI Deep Dive
+<!-- --- -->
 
----
+<!-- ## Presentation as an md file -->
+<!-- ![Presentation as an md file](presentation-as-an-md-file.png) -->
 
-## The Spectrum of Autonomy
-
-| Type | Control | Use Case |
-|------|---------|----------|
-| **Single LLM** | User-driven, stateless | One prompt → one response |
-| **Agentic Workflows** | Predefined paths, managed state | Structured multi-step processes |
-| **Autonomous Agents** | LLM-directed, memory | Open-ended goal pursuit |
-
-A smaller model in an agentic workflow hit **95.1%** on HumanEval — vs 67% for the best model alone.
-
-**Architecture beats model size.**
-
----
-
-## OpenClaw
-
-**247K+ GitHub stars in 60 days** — fastest-growing OSS project ever
-
-- Runs locally on Mac, Windows, Linux
-- 100+ built-in skills
-- Multi-channel inbox (WhatsApp, Telegram, Slack, Discord...)
-- Browser control, file system access, shell commands
-- Works with Claude, GPT, or local models
-
-> "Probably the single most important release of software, probably ever."
-
-*— Jensen Huang, March 2026*
-
----
-
-## OpenClaw Alternatives
-
-| Tool | Focus | Codebase | RAM |
-|------|-------|----------|-----|
-| **OpenClaw** | Full-featured | 430K lines | 390 MB |
-| **Nanobot** | Simplicity | 4K lines | 50 MB |
-| **ZeroClaw** | Edge, security | Rust | 5 MB |
-| **PicoClaw** | Ultra-light, IoT | Go | <10 MB |
-| **CrewAI** | Multi-agent | Python | Varies |
+<!-- Note: For example I decided to adopt the markdown file format everywhere I can. This presentation is a text file, that I can then cut up, expand, summarize any way I like. --> 
 
 ---
 
@@ -508,10 +459,9 @@ Andrej Karpathy's experiment: **let AI conduct ML research overnight**
 [github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
 
 ---
-
 <!-- .slide: class="center" -->
 
-## Part VI
+## Part V
 
 # Actions You Can Take Now
 
@@ -519,79 +469,54 @@ Andrej Karpathy's experiment: **let AI conduct ML research overnight**
 
 ## Start Tomorrow
 
-**1. Spin up a VPS with Docker**
+**1. Spin up a VPS with Docker** <!-- .element: class="fragment" data-fragment-index="1" -->
 
-One container per employee with OpenClaw (or ZeroClaw for lower overhead)
+One container per employee with OpenClaw <!-- .element: class="fragment" data-fragment-index="1" -->
 
-**2. Give each employee a token budget**
+**2. Give each employee a token budget** <!-- .element: class="fragment" data-fragment-index="2" -->
 
-$100/month is enough to explore — tracks usage and builds intuition
+$100 worth of tokens is enough to explore and build intuition <!-- .element: class="fragment" data-fragment-index="2" -->
 
-**3. Start small, find the friction**
+**3. Start small, find the friction** <!-- .element: class="fragment" data-fragment-index="3" -->
 
-Look for repetitive tasks: reports, data extraction, formatting, scheduling
-
----
-
-## What to Automate First
-
-- **Meeting summaries** → Transcribe, extract actions, send follow-ups
-- **Report generation** → Pull data, format, distribute on schedule
-- **Email triage** → Categorize, draft responses, flag urgent items
-- **Research tasks** → Gather info, summarize, present findings
-- **Code review prep** → Initial pass, flag issues, suggest improvements
-
-**ROI: 300–500% within 6 months** is typical for well-chosen use cases.
+Ask each employee to find friction in their workflows. Look for repetitive tasks: reports, data extraction, formatting, scheduling, etc. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
-
 <!-- .slide: class="center" -->
 
-## Part VII
+## Part VI
 
 # How I Can Help
+Note: Overall, I tried to give you a good foundation, so that you can be confident in taking the next steps by yourselves. However, if you feel like you need more help, here are some of the services I offer you. 
 
 ---
 
 ## Services
 
-**🎯 Consulting & Advisory**
+**🎯 Consulting & Advisory** <!-- .element: class="fragment" data-fragment-index="1" -->
 
-Assess workflows, identify high-impact automation opportunities, build adoption roadmap. Avoid the 40% of AI projects that fail due to poor data readiness.
+Assess workflows, identify high-impact automation opportunities, build adoption roadmap. <!-- .element: class="fragment" data-fragment-index="1" -->
 
-**🔧 Implementation**
+**🔧 Implementation** <!-- .element: class="fragment" data-fragment-index="2" -->
 
-Design and deploy custom AI agents tailored to your processes. From single-task automations to multi-agent orchestration.
+Design and deploy custom AI agents tailored to your processes. From single-task automations to multi-agent orchestration. <!-- .element: class="fragment" data-fragment-index="2" -->
 
-**📚 Training & Workshops**
+**📚 Training & Workshops** <!-- .element: class="fragment" data-fragment-index="3" -->
 
-Hands-on sessions for your team. From prompt engineering to production agent workflows. Build internal capability, not dependency.
-
----
-
-## Engagement Options
-
-| Format | Duration | Outcome |
-|--------|----------|---------|
-| **Discovery Session** | Half-day | Top 3 automation candidates |
-| **Pilot Project** | 2–4 weeks | Working agent for one workflow |
-| **Team Workshop** | 1–2 days | Hands-on skills for engineers |
-| **Full Implementation** | 1–3 months | Production-ready infrastructure |
+Hands-on sessions for your team. From prompt engineering to production agent workflows. Build internal capability, not dependency. <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
-
 <!-- .slide: class="center" -->
 
 ## The Bottom Line
 
-# Software is becoming instant.
+The age of agentic AI is here. But just like with everything else, there is a learning curve.
 
-The companies that adapt fastest will have an insurmountable advantage.
+Don't FOMO, learn to walk before you can run.
 
-The barrier isn't technology — it's mindset.
+Stay safe!
 
 ---
-
 <!-- .slide: class="center" -->
 
 # Thank You
@@ -600,4 +525,3 @@ The barrier isn't technology — it's mindset.
 
 Questions?
 
-*Slides and resources available after the talk*
