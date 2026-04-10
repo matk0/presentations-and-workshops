@@ -37,6 +37,17 @@
   text-align: center;
 }
 
+.reveal .slides section.more-paragraph-space > * + * {
+  margin-top: 0.72em;
+}
+
+.reveal .slides section.more-paragraph-space h1 + p,
+.reveal .slides section.more-paragraph-space h2 + p,
+.reveal .slides section.more-paragraph-space h3 + p,
+.reveal .slides section.more-paragraph-space h4 + p {
+  margin-top: 0.4em;
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,

@@ -4,21 +4,23 @@ The software paradigm shifted. Yours should too.
 
 **Matej Lukášik** · April 2026
 
+Note: Hello, my name is Matej Lukášik and I'm a friend of Amity Age and today I would like to tell you a bit about Agentic AI, for about thirty minutes and then we can have another thirty minutes for discussion.
+
 ---
-<!-- .slide: class="center" -->
+<!-- .slide: class="center more-paragraph-space" -->
 
 ## Part I
 # The Big Picture
 
-Note: I will start really wide and then zoom in step by step. In this way, your reasoning will be grounded in the big picture and you can make your decisions with more confidence.
+Note: Let's have a look at the bigger picture first so that your reasoning will be grounded and you can make decisions with confidence.
 
 ---
 
 ### We Live in an Information Age
 
-Every company is a software company
+which means that every company is a software company
 
-Note: Your competitive advantage is determined by how effectively you can leverage software.
+Note: No matter the industry you're in, a lot of the value you deliver and capture is determined by how effectively you use software.
 
 ---
 ### The Evolution of Software Distribution
@@ -30,13 +32,15 @@ Note: Your competitive advantage is determined by how effectively you can levera
 | 2025+ | 🤖 Agents | On-demand generation |
 
 
-Note: Developing and distributing software was difficult and expensive.
+Note: At the beginning of the era of personal computers, developing and distributing software was difficult and expensive.
 
-First, we had to write it, compile it and then physically distribute it.
+First, we had to write it in clumsy languages and then physically distribute it on floppy disks, CDs or later DVDs.
 
-Then came the SaaS revolution, when we could distribute the software via the browser. You might not remember, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up, in comparison pay a very low monthly fee and start using the software on every computer that had a browser was revolutionary.
+Then came the SaaS revolution, when we could distribute the software via the browser. Some of you might be young enough to not be able to remember this, but the fact that companies did not have to contractually commit to a set version of software but instead could sign up online, pay comparatively very low monthly and could start using the software immediately was revolutionary.
 
-Today, we are entering a new software paradigm, a paradigm of Agentic AI. It is still very early, but this might be the biggest revolutions of all.
+Today, we are entering a new software paradigm, a paradigm of Agentic AI. In this era, only the most powerful and complicated applications are built by big companies and subscribed to using the SaaS model. The rest is built by on-demand. On a long enough time horizon, maybe even the browser will dissapear and all you do is talk to your agent.
+
+Why is that?
 
 ---
 
@@ -60,17 +64,17 @@ $ claude "build me a tool that does X"
 
 Note: You used to:
 - identify a problem in the company
-- research tools
+- research tools that would help you solve it
 - judge whether they are compatible with what you are already using 
 - decide on the tier and the number of seats
 - onboard everyone in the company to use them.
 
-__AND STILL HOWEVER MUCH you tried, the software never did everything you needed, and you always thought "If only it could do X"__
+__AND STILL HOWEVER MUCH you tried, the software never did everything you needed, and you always thought "if only it could do X"__
 
 With the advent of capable coding agents like claude code or codex you can sit down and write the exact software you need in minutes.
 
 ---
-<!-- .slide: class="center" -->
+<!-- .slide: class="center more-paragraph-space" -->
 
 ### KEY TAKEWAY
 
@@ -83,9 +87,11 @@ to:
 #### "How do I specify this well enough so that my coding agent can build it in one shot?"
 
 
-Note: Because the cost of software creation is collapsing, it no longer makes sense to subscribe to services that does not fit you very well and you can build them to fit your needs exactly.
+Note: Here is the key takeway: Change your thinking FROM, TO. Use few solid tools, like Google Docs, Trello, Slack and drive the information flows in between them using agents. Since agents can now use any tool via either CLI tools, MCP server or the browser itseld, it makes more sense to build your own integrations that exactly suit your needs rather than wait for companies to build them.
 
-**HOWEVER** our thinking has not adjusted yet. We are looking at new AI powered products and comparing how much each costs on a monthly basis and whether the service has all the bells and whistles we are looking for. This is an old paradigm thinking applied to new paradigm. In the new paradigm, intelligence is on tap via API and you use this intelligence in a sovereign manner to suit your needs exactly.
+If there is a little online tool you would like to use, but you need to sign up for it (because there is an upsell or a premium feature funnel down the road), don't do it. Ask your agent to write the tool for you. It will cost you a few cents, but it will be exactly as you need it and it will be free forever.
+
+This is a subtle shift, Andrej Karpathy describes it as software becoming ephemeral, and it might take some time to click.
 
 ---
 <!-- .slide: class="center" -->
@@ -93,15 +99,25 @@ Note: Because the cost of software creation is collapsing, it no longer makes se
 ## Part II
 
 # What is an AGENT?
+Note: One of the reasons we are talking today is that there is so much hype and almost a sense of FOMO around Agentic AI.
+
+There is also the counternarrative of AI being a useless producing slop machine and stories of agentic workflows gone terribly wrong.
+
+---
+
+![Pull back the curtain](pull-the-curtain.jpg)
+<!-- .element: style="max-height: 76vh; width: auto; border-radius: 12px; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28)" -->
+Note: The truth is somewhere in the middle. Let me walk you through what an agent is and pull the curtain for you, so that your understanding can touch solid ground and move forward with confidence.
 
 ---
 
 ### Brain + Tools + Memory + Agency =
 ## Agent 
+Note: ChatGPT by itself is just an LLM chatbot, however, give it a brain, tools, memory and agency and it becomes a very capable Agent that can do a lot of knowledge work for you.
 
 ---
 
-BRAIN -> reasons about the next best step
+BRAIN -> writes plans, reviews them, reasons about the next best step
 
 ---
 <!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
@@ -133,9 +149,11 @@ for step in plan_steps:
 ```
 <!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
 
+Note: The intention here is not to go into the details and explain the code, but rather show you, that what we call an intelligent agent is a clever combination of good old structured workflows and LLMs.
+
 ---
 
-TOOLS -> lets it browse the web, call APIs, edit files, send messages and execute code
+TOOLS -> lets it browse the web, call APIs, write files, send messages, execute code, etc.
 
 ---
 <!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
@@ -181,6 +199,7 @@ User: Is mining profitable right now?
 MEMORY -> keeps context across time
 
 ---
+<!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
 ```python
 import anthropic
 import numpy as np
@@ -215,13 +234,16 @@ Relevant context from memory:
 
 Use this context when answering. Do not hallucinate hardware history."""
 ```
+<!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
+
+Note: Normally an LLM only remembers what is in it's current context and we have to reset it when we reach the context window. We can create note files and then later load them into the context. However, the real nice way to do this, is to periodically save summarizations of our conversations in a vector database and then search this database while working prompts thus seemingly remembering all we ever talked about.
 
 ---
 
 AGENCY -> means it can decide and act in a loop
 
 ---
-
+<!-- .slide: class="compact-code" style="padding: 0; top: 0 !important; height: 700px" -->
 ```python
 messages = [{"role": "user", "content": user_input}]
 
@@ -250,37 +272,154 @@ while True:
         # ↑ loop continues — model sees the result and decides next step
 ```
 
+<!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
 ---
-
-
-### Agentic AI FOMO
-
-Note: One of the reasons we are having this workshop right now is that there is so much hype and almost a sense of FOMO around agents.
-
-There is also the counternarrative of AI being useless, slop machines and stories of agentic worklflows gone terribly wrong.
-
 
 ## Part III
 # The Use Cases
 
-Note: The truth is somewhere in the middle. Let's go through some of the ways agents are being used right now.
+Note: OK, now that we understand there is nothing magical about agents and AGI is not here yet, let's look at the most common ways agents are used in companies. As we move through them, I will also point out different patterns and paradigm shifts that I can see emerging.
+
+---
+## Inbox Triage + Drafting
+
+Note:
+- Give your agent access to your inbox, it can classify emails, extract fields, forward if necessary and draft responses so that you can later just check them and send them
+- If there is anything unusual or he is not sure, he can escalate to you via another channel
+- Slowly over time you can teach the agent to treat your inbox just like you would
+
+**Failure modes**: Wrong classification, wrong tone, too much access, accidental external reply.
 
 ---
 
-## Pull, Don't Push
+## Calendar Scheduling + Coordination
 
-Old software makes humans poll systems for updates.
+Note: 
+- You give agent access to your calendar and then ask it to schedule meetings using your voice via Telegram or any other channel. This is how we all imagined Siri would work.
+- It checks for conflicts, sends invites, follows up if unanswered etc.
 
-Agentic software flips the flow:
-- Watches inboxes, dashboards, feeds, and databases
-- Pulls out what changed
-- Summarizes what matters
-- Routes it to the right person
-- Takes the next step when allowed
+**Failure modes**: Auth friction, time-zone errors, missing buffers, double-booking.
+
+---
+
+## Research
+
+Note:
+- Research agent gathers sources, summarizes findings, and turns them into briefs for you to read any time.
+- When preparing the list of use cases we are going through right now, I asked my agent to search for the 30 most popular YT videos on agent use cases, transcribe them all and then extract the most common use cases.
+
+**Failure modes**: Hallucinations, weak sources, missing citations, drifting away from the rubric.
+
+---
+
+## Monitoring + Alerts
+
+
+Note:
+- For things that have clear definitions and metrics, like for example bitcoin price, it is easy to set an alert.
+- But for things that are harder to define and judgment is needed, like monitoring news, monitoring competition etc. monitoring and alerting is more difficult.
+
+**Failure modes**: Brittle scraping, noisy alerts, and Terms-of-Service constraints.
+
+---
+
+![hacker news](hacker-news.png)
+
+Note: Here is an example. Things in AI are moving so fast, you have to check the news every day. But I don't want to spend my time going through the list of news and spend my cognitive cycles on whether this particular news piece is relevant to AI or not. I asked my agent to go to this website every day, and extract only the news that are relevant to AI and send them to me via Telegram.
+
+---
+
+## Pull, Don't Poll
+
+Agents
+- watch inboxes, dashboards, feeds, and databases
+- pull out what changed
+- summarize what matters
+- routes it to the right person
+- take the next step when allowed
 
 **The interface matters less. The outcome matters more.**
 
-Note: Software used to be something you had to go check. With agents, the software starts working in the background and brings you the delta, not the raw stream.
+Note: This way of monitoring data feeds is another paradigm shift. The browser makes humans poll systems for updates.Software used to be something you had to go check. With agents, the software starts working in the background and brings you the update so that you don't have to waste your time on the comparison
+
+---
+
+## Knowledge Base Responder
+
+Note:
+- You connect your company documents, SOPs, contracts and internal knowledge and let the agent answer repetitive customer questions
+- It can either answer directly or draft a response for a human to approve, depending on the risk level
+
+**Failure modes**: Prompt injection, stale docs, brand-tone mistakes, compliance and logging gaps.
+
+
+---
+
+## Lead Generation + Enrichment
+
+Note:
+- The agent finds leads, enriches company data, drafts personalized outreach and keeps the pipeline organized for you
+- This is attractive because it ties very directly to revenue and is easy to measure and A/B test
+- You can think of it as outsourcing the top of the funnel to software
+
+**Failure modes**: Legal and ToS risk, low-quality data, spammy outreach, poor deliverability.
+
+---
+
+## Document Processing
+
+Note:
+- You feed the agent receipts, invoices, contracts or scanned PDFs and it extracts the relevant fields into structured data
+- Then it can validate, route for approval, or hand the result off to another system
+- This is one of the most practical business use cases because it removes repetitive retyping and reduces operational errors
+
+**Failure modes**: OCR edge cases, vendor template variance, and sensitive financial data handling.
+
+---
+
+## Content Operations
+
+Note:
+- You take a podcast, video, recording or notes and let the agent turn it into posts, clips, emails and a publishing schedule
+- This is especially powerful for small teams because it multiplies the output from every piece of source material
+- The value is not just speed, but also consistency
+
+**Failure modes**: Generic voice, factual drift, uneven quality, over-automation.
+
+---
+
+## Agentic Workflows for Engineering
+
+Note:
+- This is where coding agents plan, edit files, run tests, review code and coordinate multi-step engineering work
+- They are especially strong at routine implementation, refactors, debugging and repetitive engineering chores
+- The productivity gains can be large, but they work best when paired with strong review and strong CI
+
+**Failure modes**: Subtle bugs, secret handling, runaway token spend, weak CI gates.
+
+---
+
+## Browser Automation
+
+Note:
+- Sometimes there is no API, and the only way to automate a workflow is to let the agent operate the browser directly
+- It clicks through portals, fills forms, downloads files and completes repetitive web tasks that humans would otherwise do manually
+- This unlocks the last mile of automation for many legacy systems
+
+**Failure modes**: Brittle selectors, MFA friction, session expiry, costly mis-clicks.
+
+---
+
+## Voice Agents
+
+Note:
+- These are phone-based agents for intake, booking, qualification and simple outbound workflows
+- In the right verticals they can create immediate business value because they convert leads quickly and are always available
+- This is also one of the most public-facing forms of agentic AI, so quality matters a lot
+
+**Failure modes**: Trust, quality variance, consent/compliance issues, very visible failures.
+
+
 
 ---
 
@@ -320,9 +459,11 @@ Note: This is the bridge into the next section. Once intelligence becomes infras
 
 ---
 
+---
+
 <!-- .slide: class="center" -->
 
-## Part III
+## Part IV
 
 # Sovereignty
 
@@ -368,7 +509,7 @@ client = OpenAI(base_url="https://routstr-provider.com")
 
 <!-- .slide: class="center" -->
 
-## Part IV
+## Part V
 
 # Agentic AI Deep Dive
 
@@ -433,7 +574,7 @@ Andrej Karpathy's experiment: **let AI conduct ML research overnight**
 
 <!-- .slide: class="center" -->
 
-## Part V
+## Part VI
 
 # Actions You Can Take Now
 
@@ -469,7 +610,7 @@ Look for repetitive tasks: reports, data extraction, formatting, scheduling
 
 <!-- .slide: class="center" -->
 
-## Part VI
+## Part VII
 
 # How I Can Help
 
@@ -518,7 +659,7 @@ The barrier isn't technology — it's mindset.
 
 # Thank You
 
-**Matej Lukašík**
+**Matej Lukášik**
 
 Questions?
 
