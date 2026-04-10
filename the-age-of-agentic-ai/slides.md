@@ -74,11 +74,12 @@ __AND STILL HOWEVER MUCH you tried, the software never did everything you needed
 With the advent of capable coding agents like claude code or codex you can sit down and write the exact software you need in minutes.
 
 ---
+<!-- .slide: class="center" -->
+## KEY TAKEWAY
+
 <!-- .slide: class="center more-paragraph-space" -->
-
-### KEY TAKEWAY
-
 change your thinking from:
+
 
 #### "What tool should I subscribe to next to solve my problem?"
 
@@ -274,6 +275,23 @@ while True:
 
 <!-- .element: style="font-size: 0.44em; line-height: 1.04; white-space: pre-wrap; max-height: none; margin: 0; width: 100%; height: 700px; padding: 1em 1.05em" -->
 ---
+<!-- .slide: class="center" -->
+## KEY TAKEWAY
+LLMs are not agents
+
+Agents use LLMs to achieve your goals
+
+Note: Here is a metaphor to help you think about this: You own your computer, you can take it anywhere, you can upgrade it's HW, install anything on it. However, you always need electricity to power it. In the same way, you should think about your agents, they should be yours, on your file systems and ideally run on your HW. To power them, instead of electricity, you supply them with intelligence. Intelligence is provided by different companies (openai, anthropic), that are competing for your dollars. You can choose different LLMs for different agents and different tasks based on their capabilities and pricing.
+
+From a perspective of a Bitcoin company like Amity Age, this paradigm also allows you to spend satoshis for intelligence and get a fair discount for doing so by using solutions like routstr.
+
+However, this is the exact same dilemma as with Bitcoin custody, the more sovereign you want the setup to be, the more work and inconvenience for you. On the other hand there are whole AI suites like the Claude Cowork that provide high levels of convenience but lock you into a vendor and can become more expensive.
+
+Make no mistake about it, agents can get expensive and as you discover their power, you will want to use them more and more. Even though they will be 10x cheaper than if you would ask human to do the same work, the costs will add up.
+
+This is one of the choices you will have to make going forward. What levels of sovereignity and self-sustainability do we want and what are we willing to pay for it?
+
+---
 
 ## Part III
 # The Use Cases
@@ -331,23 +349,23 @@ Note: Here is an example. Things in AI are moving so fast, you have to check the
 
 ## Pull, Don't Poll
 
-Agents
+Agents can
 - watch inboxes, dashboards, feeds, and databases
 - pull out what changed
 - summarize what matters
-- routes it to the right person
+- route it to the right person
 - take the next step when allowed
 
-**The interface matters less. The outcome matters more.**
+**The interface matters less. The outcome matters more.** <!-- .element: class="fragment" -->
 
-Note: This way of monitoring data feeds is another paradigm shift. The browser makes humans poll systems for updates.Software used to be something you had to go check. With agents, the software starts working in the background and brings you the update so that you don't have to waste your time on the comparison
+Note: This way of monitoring data feeds is another subtle paradigm shift. The browser makes humans poll systems for updates.Software used to be something you had to go check. With agents, the software starts working in the background and brings you the update so that you don't have to waste your time on the comparison
 
 ---
 
-## Knowledge Base Responder
+## Knowledge Base
 
 Note:
-- You connect your company documents, SOPs, contracts and internal knowledge and let the agent answer repetitive customer questions
+- You connect your company documents, standard operating procedures, contracts and internal knowledge and let the agent answer repetitive customer questions
 - It can either answer directly or draft a response for a human to approve, depending on the risk level
 
 **Failure modes**: Prompt injection, stale docs, brand-tone mistakes, compliance and logging gaps.
@@ -359,8 +377,8 @@ Note:
 
 Note:
 - The agent finds leads, enriches company data, drafts personalized outreach and keeps the pipeline organized for you
-- This is attractive because it ties very directly to revenue and is easy to measure and A/B test
-- You can think of it as outsourcing the top of the funnel to software
+- This is easy to measure and A/B test
+- You can think of it as outsourcing the top of your sales funnel to software
 
 **Failure modes**: Legal and ToS risk, low-quality data, spammy outreach, poor deliverability.
 
@@ -370,8 +388,6 @@ Note:
 
 Note:
 - You feed the agent receipts, invoices, contracts or scanned PDFs and it extracts the relevant fields into structured data
-- Then it can validate, route for approval, or hand the result off to another system
-- This is one of the most practical business use cases because it removes repetitive retyping and reduces operational errors
 
 **Failure modes**: OCR edge cases, vendor template variance, and sensitive financial data handling.
 
@@ -380,22 +396,10 @@ Note:
 ## Content Operations
 
 Note:
-- You take a podcast, video, recording or notes and let the agent turn it into posts, clips, emails and a publishing schedule
-- This is especially powerful for small teams because it multiplies the output from every piece of source material
-- The value is not just speed, but also consistency
+- You feed the agent your podcasts, videos, blog posts etc. and let the agent turn it into posts, clips, emails and give it all publishing schedule
+- This is great for short form content marketing, education, etc.
 
 **Failure modes**: Generic voice, factual drift, uneven quality, over-automation.
-
----
-
-## Agentic Workflows for Engineering
-
-Note:
-- This is where coding agents plan, edit files, run tests, review code and coordinate multi-step engineering work
-- They are especially strong at routine implementation, refactors, debugging and repetitive engineering chores
-- The productivity gains can be large, but they work best when paired with strong review and strong CI
-
-**Failure modes**: Subtle bugs, secret handling, runaway token spend, weak CI gates.
 
 ---
 
@@ -414,12 +418,8 @@ Note:
 
 Note:
 - These are phone-based agents for intake, booking, qualification and simple outbound workflows
-- In the right verticals they can create immediate business value because they convert leads quickly and are always available
-- This is also one of the most public-facing forms of agentic AI, so quality matters a lot
 
 **Failure modes**: Trust, quality variance, consent/compliance issues, very visible failures.
-
-
 
 ---
 
@@ -438,74 +438,11 @@ To work well, agents need machine-readable context:
 Note: This is why data readiness matters so much. If important context only lives in people's heads, scattered screenshots, or closed interfaces, your agents stay blind.
 
 ---
-
-## Intelligence on Tap
-
-# ⚡ = 🧠
-
-Reasoning starts to look like infrastructure:
-
-- On-demand
-- Metered
-- Embedded into every workflow
-- Swappable by price, speed, or privacy
-- Expected everywhere, noticed nowhere
-
-You will not buy software for every edge case.
-
-You will route intelligence into the process.
-
-Note: This is the bridge into the next section. Once intelligence becomes infrastructure, the obvious questions become who controls it, where it runs, and what happens to your data.
-
----
-
----
-
 <!-- .slide: class="center" -->
 
-## Part IV
-
-# Sovereignty
-
 ---
 
-## Why Sovereignty Matters
 
-- **Data privacy** — Your data never leaves your infrastructure
-- **Compliance** — Meet regulatory requirements (GDPR, industry-specific)
-- **Control** — No vendor lock-in, no API changes breaking workflows
-- **Cost predictability** — Own your compute, control your costs
-- **Censorship resistance** — No content policies blocking legitimate use cases
-
----
-
-## Running on Your Hardware
-
-The sovereign AI stack:
-
-| Layer | Options |
-|-------|---------|
-| Models | Llama 3, Mistral, Qwen — open weights |
-| Inference | Ollama, llama.cpp, vLLM, LM Studio |
-| Orchestration | OpenClaw, LangChain, CrewAI |
-| Routing | LiteLLM, Routstr |
-
----
-
-## Routstr: Decentralized AI Routing
-
-- **Permissionless** — No accounts, no sign-ups
-- **Private** — Pay with Cashu eCash tokens via Bitcoin Lightning
-- **OpenAI-compatible** — Drop-in replacement for existing code
-- **Monetize your hardware** — Run the proxy, earn from inference
-
-```python
-# Point your OpenAI SDK at any Routstr provider
-# Use a Cashu token as your API key
-client = OpenAI(base_url="https://routstr-provider.com")
-```
-
----
 
 <!-- .slide: class="center" -->
 
